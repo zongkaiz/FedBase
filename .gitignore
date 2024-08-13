@@ -1,0 +1,9 @@
+result/
+pre_train
+plot
+data
+.idea
+*.sh
+*.txt
+__pycache__
+figures
