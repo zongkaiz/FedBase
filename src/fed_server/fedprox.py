@@ -102,19 +102,19 @@ class FedProxTrainer(BaseFederated):
         return averaged_solution.detach()
     
 
-    def aggregate_parameters(self, local_model_paras_set):
+    # def aggregate_parameters(self, local_model_paras_set):
 
-        averaged_paras = copy.deepcopy(self.model.state_dict())
-        train_data_num = 0
-        num = 1
-        for var in averaged_paras:
-            averaged_paras[var] = 0
-        for num_sample, local_model_paras in local_model_paras_set:
-            for var in averaged_paras:
-                averaged_paras[var] += local_model_paras[var]
-            train_data_num += num_sample
-            num += 1
-        for var in averaged_paras:
-            averaged_paras[var] /= num
+    #     averaged_paras = copy.deepcopy(self.model.state_dict())
+    #     train_data_num = 0
+    #     num = 1
+    #     for var in averaged_paras:
+    #         averaged_paras[var] = 0
+    #     for num_sample, local_model_paras in local_model_paras_set:
+    #         for var in averaged_paras:
+    #             averaged_paras[var] += local_model_paras[var]
+    #         train_data_num += num_sample
+    #         num += 1
+    #     for var in averaged_paras:
+    #         averaged_paras[var] /= num
 
-        return averaged_paras
+    #     return averaged_paras
